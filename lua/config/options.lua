@@ -9,6 +9,8 @@ opt.number = true
 
 opt.title = true
 opt.autoindent = true
+opt.number = true
+opt.relativenumber = true
 opt.smartindent = true
 opt.hlsearch = true
 opt.backup = false
@@ -43,3 +45,4 @@ opt.formatoptions:append({ "r" })
 
 vim.cmd([[au BufNewFile,BufRead *.astro setf astro]])
 vim.cmd([[au BufNewFile,BufRead Podfile setf ruby]])
+
