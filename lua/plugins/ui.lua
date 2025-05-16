@@ -3,18 +3,36 @@ return {
 		"folke/tokyonight.nvim",
 		lazy = false,
 		priority = 1000,
-		opts = function(_, opts)
-			opts.style = "moon"
-			opts.light_style = "day"
-			opts.transparent = true
-			opts.terminal_colors = true
-			opts.styles = {
+    opts = {
+			style = "moon",
+			light_style = "day",
+			transparent = true,
+			terminal_colors = true,
+			styles = {
 				comments = { italic = true },
 				keywords = { italic = true },
-			}
-			opts.lualine_bold = true
+			},
+			lualine_bold = true,
 			-- For better performance
-			opts.cache = true
-		end,
+			cache = true
+    },
+    config = function(_,opts)
+      require("tokyonight").setup(opts)
+      vim.cmd.colorscheme("tokyonight")
+    end
 	},
+
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    config = function()
+      require("lualine").setup({
+ options = {
+    -- ... your lualine config
+    theme = 'tokyonight'
+    -- ... your lualine config
+  }
+      })
+    end
+  }
 }
