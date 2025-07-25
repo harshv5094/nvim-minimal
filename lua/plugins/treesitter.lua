@@ -2,24 +2,25 @@ return {
 	-- Treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
-    lazy = false,
-    opts = function()
-      local configs = require("nvim-treesitter.configs")
-      local opts = configs.setup({
-        "c",
-        "lua",
-        "vim",
-        "vimdoc",
-        "query",
-        "git_config"
-      }) 
-      return opts
-    end
+		lazy = false,
+		opts = function()
+			local configs = require("nvim-treesitter.configs")
+			local opts = configs.setup({
+				"c",
+				"lua",
+				"vim",
+				"vimdoc",
+				"query",
+				"git_config",
+			})
+			return opts
+		end,
 	},
 
 	-- Treesitter Context
 	{
 		"nvim-treesitter/nvim-treesitter-context",
+    event = "VeryLazy",
 		opts = function()
 			local context = require("treesitter-context")
 			local opts = context.setup({

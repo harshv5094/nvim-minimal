@@ -6,8 +6,11 @@ g.maplocalleader = "\\"
 
 opt.encoding = "utf-8"
 
+opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus" -- Sync with system clipboard
+
 opt.title = true
 opt.autoindent = true
+opt.cursorline = true
 opt.number = true
 opt.relativenumber = true
 opt.smartindent = true
@@ -33,7 +36,6 @@ opt.wildignore:append({ "*/node_modules/*" })
 opt.splitbelow = true -- Put new windows below current
 opt.splitright = true -- Put new windows right of current
 opt.splitkeep = "cursor"
-opt.conceallevel=0
 opt.mouse = "a"
 
 -- Undercurl
@@ -45,4 +47,3 @@ opt.formatoptions:append({ "r" })
 
 vim.cmd([[au BufNewFile,BufRead *.astro setf astro]])
 vim.cmd([[au BufNewFile,BufRead Podfile setf ruby]])
-
