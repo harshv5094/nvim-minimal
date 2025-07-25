@@ -1,5 +1,6 @@
 return {
 	{
+    -- Main Theme
 		"folke/tokyonight.nvim",
 		lazy = false,
 		priority = 1000,
@@ -22,6 +23,7 @@ return {
     end
 	},
 
+  -- Status Line
   {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
@@ -34,5 +36,11 @@ return {
   }
       })
     end
-  }
+  },
+
+  -- Which Key
+    {
+      "folke/which-key.nvim"
+    }
+
 }

@@ -5,7 +5,6 @@ g.mapleader = " "
 g.maplocalleader = "\\"
 
 opt.encoding = "utf-8"
-opt.number = true
 
 opt.title = true
 opt.autoindent = true
@@ -34,6 +33,7 @@ opt.wildignore:append({ "*/node_modules/*" })
 opt.splitbelow = true -- Put new windows below current
 opt.splitright = true -- Put new windows right of current
 opt.splitkeep = "cursor"
+opt.conceallevel=0
 opt.mouse = "a"
 
 -- Undercurl

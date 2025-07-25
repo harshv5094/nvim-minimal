@@ -16,10 +16,14 @@ vim.api.nvim_create_autocmd("FileType", {
 -- Setting up relative line number and comment color
 vim.api.nvim_create_autocmd({ "BufEnter", "VimEnter" }, {
 	callback = function()
-		local fgcolor = "#636da6"
+		local fgcolor = "#636da6" -- soft blue for comments and other line numbers
+		local orange = "#ff9e64"  -- TokyoNight Moon's orange
 		local bgcolor = "none"
+
 		vim.api.nvim_set_hl(0, "LineNrAbove", { fg = fgcolor, bg = bgcolor })
-		vim.api.nvim_set_hl(0, "Comment", { fg = fgcolor, bg = bgcolor })
 		vim.api.nvim_set_hl(0, "LineNrBelow", { fg = fgcolor, bg = bgcolor })
+		vim.api.nvim_set_hl(0, "Comment", { fg = fgcolor, bg = bgcolor })
+		vim.api.nvim_set_hl(0, "CursorLineNr", { fg = orange, bg = bgcolor, bold = true })
 	end,
 })
+
