@@ -21,7 +21,7 @@ return {
 					local fgcolor = "#636da6"
 					local bgcolor = "none"
 					local colors = require("tokyonight.colors").setup()
-					hl.MsgArea = { fg = colors.purple }
+					hl.MsgArea = { fg = colors.fg_float }
 					hl.LineNrAbove = { fg = fgcolor, bg = bgcolor }
 					hl.LineNrBelow = { fg = fgcolor, bg = bgcolor }
 					hl.Comment = { fg = fgcolor, bg = bgcolor }
@@ -46,8 +46,4 @@ return {
 		end,
 	},
 
-	-- Which Key
-	{
-		"folke/which-key.nvim",
-	},
 }

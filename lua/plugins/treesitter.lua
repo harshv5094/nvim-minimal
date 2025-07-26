@@ -3,18 +3,24 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		lazy = false,
-		opts = function()
-			local configs = require("nvim-treesitter.configs")
-			local opts = configs.setup({
+    config = function()
+      local configs = require("nvim-treesitter.configs")
+
+      configs.setup({
+        ensure_installed = {
 				"c",
 				"lua",
 				"vim",
 				"vimdoc",
 				"query",
 				"git_config",
-			})
-			return opts
-		end,
+        "markdown",
+        },
+        sync_install = false,
+        highlight = { enable = true },
+        indent = { enable = true },  
+      })
+    end
 	},
 
 	-- Treesitter Context
