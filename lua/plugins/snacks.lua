@@ -4,11 +4,10 @@ return {
 		priority = 1000,
 		lazy = false,
 		opts = {
-			animate = { enabled = true },
 			bigfile = { enabled = true },
 			bufdelete = { enabled = true },
-			dashboard = { enabled = false },
-			git = { enabled = true },
+			dashboard = { enabled = true },
+			explorer = { enabled = true },
 			indent = { enabled = true },
 			input = { enabled = true },
 			notifier = {
@@ -21,6 +20,11 @@ return {
 			scroll = { enabled = true },
 			statuscolumn = { enabled = true },
 			words = { enabled = true },
+			styles = {
+				notification = {
+					-- wo = { wrap = true }, -- Wrap notifications
+				},
+			},
 		},
 		keys = {
 			-- Top Pickers & Explorer
@@ -58,6 +62,13 @@ return {
 					Snacks.picker.notifications()
 				end,
 				desc = "Notification History",
+			},
+			{
+				"<leader>e",
+				function()
+					Snacks.explorer()
+				end,
+				desc = "File Explorer",
 			},
 			-- find
 			{

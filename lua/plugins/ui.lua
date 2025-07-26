@@ -21,11 +21,12 @@ return {
 					local fgcolor = "#636da6"
 					local bgcolor = "none"
 					local colors = require("tokyonight.colors").setup()
-					hl.MsgArea = { fg = colors.fg_float }
+					-- hl.MsgArea = { fg = colors.fg_float }
 					hl.LineNrAbove = { fg = fgcolor, bg = bgcolor }
 					hl.LineNrBelow = { fg = fgcolor, bg = bgcolor }
 					hl.Comment = { fg = fgcolor, bg = bgcolor }
 					hl.CursorLineNr = { fg = colors.orange, bold = true }
+          hl.TreesitterContextLineNumberBottom = { fg = fgcolor, bg = bgcolor }
 				end,
 			})
 		end,
@@ -47,7 +48,6 @@ return {
 	},
 
 	-- Noice UI
-
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
@@ -65,4 +65,18 @@ return {
 			})
 		end,
 	},
+
+{
+  "j-hui/fidget.nvim",
+  event = "BufReadPre",
+  config = function()
+    require("fidget").setup({
+      notification = {
+        window = {
+          winblend = 0
+        }
+      }
+    })
+  end,
+}
 }
