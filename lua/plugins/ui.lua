@@ -46,4 +46,23 @@ return {
 		end,
 	},
 
+	-- Noice UI
+
+	{
+		"folke/noice.nvim",
+		event = "VeryLazy",
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+			"folke/snacks.nvim", -- snacks for minimal notifications
+		},
+		config = function()
+			require("noice").setup({
+				presets = {
+					bottom_search = true,
+					command_palette = true,
+					long_message_to_split = true,
+				},
+			})
+		end,
+	},
 }
